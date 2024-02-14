@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="conta.js" defer></script>
+    <script src="pratica.js" defer></script>
+   
+    
+    <title>Site</title>
+</head>
+<body>
+   <div id="main">
+
+    <div id="container">
+        <div id="headerC"></div>
+
+        <div id="ato1">
+        <button class="conta corrente">Corrente</button>
+        <button class="conta poupanca">Poupança</button>
+        <button class="conta especial">Especial</button>
+        </div>
+
+        <div id="ato2">
+            <p id="checkNome">Qual seu nome?</p>
+            <input id="yourName" type="text">
+            <button id="ato2-confirmar">confirmar</button>
+        </div>
+
+
+        <div id="ato3">
+            <div id="quantia"><h6 id="user">Kaique</h6> <p id="tipo-conta"> tipo</p></div>
+
+            <table>
+                <tr>
+                    <th>Corrente</th>
+                    <th>Poupança</th>
+                    <th>Especial</th>
+                </tr>
+                <tr>
+                    <th id="saldo-corrente">0,00</th>
+                    <th id="saldo-poupanca">0,00</th>
+                    <th id="saldo-especial">0,00</th>
+                </tr>
+            </table>
+
+            <div id="opcoes">
+            <button class="opcoes-conta" id="deposito">Deposito</button>
+            <button class="opcoes-conta" id="saque">Saque</button>
+            <button class="opcoes-conta" id="transferencia">Transferencia</button>
+            <button class="opcoes-conta" id="trocar-conta">Mudar de conta</button>
+            </div>
+
+            
+        </div>
+
+        <div id="ato4-deposito">
+            <label for="valor-deposito">Valor</label>
+            <input type="number" name="valor-deposito" id="valor-deposito">
+            <button id="ato4D-confirmar">confirmar</button>
+        </div>
+        
+        <div id="ato4-saque">
+            <label for="valor-saque">Valor</label>
+            <input type="number" name="valor-saque" id="valor-saque">
+            <button id="ato4S-confirmar">confirmar</button>
+        </div>
+
+
+    </div>
+
+   </div>
+    
+</body>
+</html>
