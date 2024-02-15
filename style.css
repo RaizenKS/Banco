@@ -161,10 +161,51 @@ th{border: 1px solid black;}
     padding-left: 10px;
 }
 
-#ato4-saque button{width: 250px; height: 30px;}
+#ato4-mudar{
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+#ato4-mudar select{
+    width: 250px;
+    height: 40px;
+    margin: 20px 0px; 
+}
 
 
-@media screen and (max-width:270px){
+#ato4-mudar button{width: 250px; height: 30px;}
+
+
+#ato4-transferencia{
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+#ato4-transferencia select{
+    width: 250px;
+    height: 40px;
+    margin: 20px 0px; 
+}
+
+#ato4-transferencia input{
+width: 250px;
+height: 40px;
+margin-top: 20px;
+}
+
+
+#ato4-transferencia button{width: 250px; height: 30px;}
+
+
+
+
+@media screen and (max-width:500px){
     #container{height: 100vh; width: 100vw;}
     .conta{height: 33.333%;}
 }

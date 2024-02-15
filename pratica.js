@@ -1,5 +1,5 @@
+let conta;
 const opcoes = document.querySelectorAll(".conta");
-let conta = {};
 
 opcoes.forEach((opcao,index)=>{
 opcao.addEventListener("click", function(){
@@ -66,10 +66,12 @@ deposito.addEventListener("click", function(){
 const valorDeposito = document.querySelector("#valor-deposito");
 
 document.querySelector("#ato4D-confirmar").addEventListener("click",function(){
-    valor= parseInt(valorDeposito.value)
+    let valor= parseInt(valorDeposito.value)
     conta.Deposito(valor)
     document.querySelector("#ato3").style.display = "flex";
     document.querySelector("#ato4-deposito").style.display = "none";
+
+    valorDeposito.value = null;
 
     saldoCorrente.innerHTML = conta.saldoC;
     saldoPoupanca.innerHTML = conta.saldoP;
@@ -84,13 +86,51 @@ saque.addEventListener("click", function(){
 
 const valorSaque = document.querySelector("#valor-saque");
 document.querySelector("#ato4S-confirmar").addEventListener("click",function(){
-    valor= parseInt(valorSaque.value)
+    let valor = parseInt(valorSaque.value)
     conta.Saque(valor)
     document.querySelector("#ato3").style.display = "flex";
     document.querySelector("#ato4-saque").style.display = "none";
-    
+    saldoCorrente.innerHTML = conta.saldoC;
+    saldoPoupanca.innerHTML = conta.saldoP;
+    saldoEspecial.innerHTML = conta.saldoE;
+    valorSaque.value = null;
+})
+
+mudarConta.addEventListener("click", function(){
+    document.querySelector("#ato3").style.display = "none";
+    document.querySelector("#ato4-mudar").style.display = "flex";
+})
+
+document.querySelector("#ato4M-confirmar").addEventListener("click", function(){
+   const valorSelect = document.querySelector("#escolha").value;
+   conta.MudarConta(valorSelect);
+   document.querySelector("#ato3").style.display = "flex";
+   document.querySelector("#ato4-mudar").style.display = "none";
+   document.querySelector("#tipo-conta").innerHTML = "conta "+ conta.conta;
+})
+
+transferencia.addEventListener("click", function(){
+    document.querySelector("#ato3").style.display = "none";
+    document.querySelector("#ato4-transferencia").style.display = "flex";
+})
+
+
+
+document.querySelector("#ato4T-confirmar").addEventListener("click", function(){
+    const select1 = document.querySelector("#to").value;
+    const select2 = document.querySelector("#from").value; 
+    let valorTransferencia = document.querySelector("#ato4T-number").value;
+    let valor = parseInt(valorTransferencia);
+    valorTransferencia = null;
+
+    conta.Transferencia(select1, select2, valor)
+    document.querySelector("#ato3").style.display = "flex";
+    document.querySelector("#ato4-transferencia").style.display = "none";
+
     saldoCorrente.innerHTML = conta.saldoC;
     saldoPoupanca.innerHTML = conta.saldoP;
     saldoEspecial.innerHTML = conta.saldoE;
 })
+
+
 

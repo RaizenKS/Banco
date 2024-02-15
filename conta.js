@@ -52,6 +52,13 @@ class Conta{
             }    
         }
 
+        if(to === "corrente", from === "especial"){
+            if(this.saldoC >= valor){
+                this.saldoC -= valor;
+                this.saldoE += valor;
+            }    
+        }
+
         if(to === "poupanca", from === "corrente"){
             if(this.saldoP >= valor){
                 this.saldoP -= valor;
@@ -59,6 +66,26 @@ class Conta{
             }    
         }
 
+        if(to === "poupanca", from === "especial"){
+            if(this.saldoP >= valor){
+                this.saldoP -= valor;
+                this.saldoE += valor;
+            }    
+        }
+
+        if(to === "especial", from === "corrente"){
+            if(this.saldoE >= valor){
+                this.saldoE -= valor;
+                this.saldoC += valor;
+            }    
+        }
+
+        if(to === "especial", from === "poupanca"){
+            if(this.saldoE >= valor){
+                this.saldoE -= valor;
+                this.saldoP += valor;
+            }    
+        }
         
     }
 }
